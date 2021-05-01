@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ms-registry</module>
+        <module>ms-gateway</module>
+        <module>ms-diners</module>
     </modules>
 
 
