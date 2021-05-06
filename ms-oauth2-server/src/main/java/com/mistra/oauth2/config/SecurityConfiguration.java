@@ -30,15 +30,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Resource
     private RedisConnectionFactory redisConnectionFactory;
 
-    // 初始化 RedisTokenStore 用于将 token 存储至 Redis
+    /**
+     * 初始化 RedisTokenStore 用于将 token 存储至 Redis
+     *
+     * @return RedisTokenStore
+     */
     @Bean
     public RedisTokenStore redisTokenStore() {
         RedisTokenStore redisTokenStore = new RedisTokenStore(redisConnectionFactory);
-        redisTokenStore.setPrefix("TOKEN:"); // 设置key的层级前缀，方便查询
+        // 设置key的层级前缀，方便查询
+        redisTokenStore.setPrefix("TOKEN:");
         return redisTokenStore;
     }
 
-    // 初始化密码编码器，用 MD5 加密密码
+    /**
+     * 初始化密码编码器，用 MD5 加密密码
+     *
+     * @return PasswordEncoder
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new PasswordEncoder() {
@@ -65,14 +74,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         };
     }
 
-    // 初始化认证管理对象
+    /**
+     * 初始化认证管理对象
+     *
+     * @return AuthenticationManager
+     * @throws Exception
+     */
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
-    // 放行和认证规则
+    /**
+     * 放行和认证规则
+     *
+     * @param http HttpSecurity
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()

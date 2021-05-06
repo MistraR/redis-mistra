@@ -8,18 +8,18 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 123456
+    password: mistra30
     url: jdbc:mysql://127.0.0.1:3306/db_redis?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
   # Redis
   redis:
     port: 6379
-    host: 192.168.10.101
+    host: 127.0.0.1
     timeout: 3000
     database: 1
-    password: 123456
+#    password: 123456
   # swagger
   swagger:
-    base-package: com.imooc.oauth2
+    base-package: com.mistra.oauth2
     title: 美食社交食客API接口文档
 
 # Oauth2

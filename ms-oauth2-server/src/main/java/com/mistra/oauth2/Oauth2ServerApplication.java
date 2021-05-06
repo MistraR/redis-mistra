@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @ Github: https://github.com/MistraR
  * @ CSDN: https://blog.csdn.net/axela30w
  */
-@MapperScan("com.imooc.oauth2.server.mapper")
+@MapperScan("com.mistra.oauth2.mapper")
 @SpringBootApplication
 public class Oauth2ServerApplication {
     public static void main(String[] args) {
