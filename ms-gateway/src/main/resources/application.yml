@@ -75,7 +75,6 @@ secure:
 # 配置 Eureka Server 注册中心
 eureka:
   instance:
-#    设置ip+端口的方式注册实例名称
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
